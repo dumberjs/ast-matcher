@@ -2,6 +2,9 @@
 const STOP = false;
 const SKIP_BRANCH = 1;
 
+// ignore position info
+const IGNORED_KEYS = ['start', 'end', 'loc', 'location', 'locations', 'line', 'column', 'range', 'ranges'];
+
 let parser;
 
 function setParser(p) {
@@ -65,11 +68,8 @@ function matchTerm(pattern) {
   if (type) return {type: type, name: possible.substr(6)};
 }
 
-// ignore position info
-const IGNORED_KEYS = ['start', 'end', 'range', 'ranges'];
-
 /**
- * Extract info from a partial esprima syntax tree, see astMatcher for pattern format
+ * Extract info from a partial estree syntax tree, see astMatcher for pattern format
  * @param pattern The pattern used on matching
  * @param part The target partial syntax tree
  * @return Returns named matches, or false.
@@ -182,16 +182,16 @@ function extract(pattern, part) {
 }
 
 /**
- * Compile a pattern into esprima syntax tree
- * @param pattern The pattern used on matching, can be a string or esprima node
- * @return Returns an esprima node to be used as pattern in extract(pattern, part)
+ * Compile a pattern into estree syntax tree
+ * @param pattern The pattern used on matching, can be a string or estree node
+ * @return Returns an estree node to be used as pattern in extract(pattern, part)
  */
 function compilePattern(pattern) {
-  // pass esprima syntax tree obj
+  // pass estree syntax tree obj
   if (pattern && pattern.type) return pattern;
 
   if (typeof pattern !== 'string') {
-    throw new Error('input pattern is neither a string nor an esprima node.');
+    throw new Error('input pattern is neither a string nor an estree node.');
   }
 
   let exp = parser(pattern);
@@ -223,7 +223,7 @@ function ensureParsed(codeOrNode) {
 /**
  * Pattern matching using AST on JavaScript source code
  * @param pattern The pattern to be matched
- * @return Returns a function that takes source code string (or esprima syntax tree) as input, produces matched result or undefined.
+ * @return Returns a function that takes source code string (or estree syntax tree) as input, produces matched result or undefined.
  *
  * __any       matches any single node, but no extract
  * __anl       matches array of nodes, but no extract
@@ -278,8 +278,9 @@ function astMatcher(pattern) {
 
 /**
  * Dependency analysis for dummies, this is a high level api to simplify the usage of astMatcher
- * @param arguments Multiple patterns to match, instead of using __str_/__arr_, use __dep and __deps to match string or partial string array.
- * @return Returns an array of string matched, or empty array.
+ * @param arguments Multiple patterns to match, instead of using __str_/__arr_,
+ *        use __dep and __deps to match string and partial string array.
+ * @return Returns a function that takes source code string (or estree syntax tree) as input, produces an array of string matched, or empty array.
  *
  * Usage:
  *   let f = depFinder('a(__dep)', '__any.globalResources([__deps])');
