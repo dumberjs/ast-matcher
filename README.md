@@ -34,7 +34,7 @@ astMatcher.setParser(function(contents) {
 });
 ```
 
-`ast-matcher` mainly provide two functions: `astMatcher` and `depFinder`
+`ast-matcher` mainly provides two functions: `astMatcher` and `depFinder`
 
 #### `astMatcher`
 
