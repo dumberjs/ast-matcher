@@ -108,7 +108,7 @@ var cjsFind = depFinder('require(__dep)');
 var deps = cjsFind(cjsJsFileContent_or_parsed_ast_tree);
 ```
 
-### 3. match `if` statement
+#### 3. match `if` statement
 
 ```js
 var matcher = astMatcher('if ( __any_condition ) { __anl_body }');
@@ -122,7 +122,7 @@ var m = matcher(code_or_parsed_ast_tree);
 // ]
 ```
 
-### 4. match `if else` statement
+#### 4. match `if else` statement
 
 ```js
 var matcher = astMatcher('if ( __any_condition ) { __anl_ifBody } else { __anl_elseBody }');
@@ -136,7 +136,7 @@ var m = matcher(code_or_parsed_ast_tree);
 // ]
 ```
 
-### 5. find [`Aurelia`](http://aurelia.io) framework's `PLATFORM.moduleName()` dependencies
+#### 5. find [`Aurelia`](http://aurelia.io) framework's `PLATFORM.moduleName()` dependencies
 
 ```js
 var auJsDepFinder = depFinder(
