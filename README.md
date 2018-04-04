@@ -34,9 +34,9 @@ astMatcher.setParser(function(contents) {
 });
 ```
 
-`ast-matcher` mainly provides two functions: `astMatcher` and `depFinder`
+## API doc for two main functions: `astMatcher` and `depFinder`.
 
-#### `astMatcher`
+### `astMatcher`
 
 Pattern matching using AST on JavaScript source code.
 
@@ -71,7 +71,7 @@ Support following match terms in pattern:
 
 > use `method([__anl])` or `method([__arr_a])` to match `method([a, "b"]);`
 
-#### `depFinder`
+### `depFinder`
 
 Dependency analysis for dummies, this is a high level api to simplify the usage of `astMatcher`.
 
@@ -87,7 +87,7 @@ finder('a("a"); a("b"); config.globalResources(["./c", "./d"])');
 * takes source code string (or estree syntax tree) as input,
 * produces an array of string matched, or empty array.
 
-### Examples
+## Examples
 
 #### 1. find AMD dependencies
 
@@ -122,7 +122,7 @@ var m = matcher(code_or_parsed_ast_tree);
 // ]
 ```
 
-#### 4. match `if else` statement
+#### 4. match `if-else` statement
 
 ```js
 var matcher = astMatcher('if ( __any_condition ) { __anl_ifBody } else { __anl_elseBody }');
