@@ -1,0 +1,43 @@
+{
+  "name": "ast-matcher",
+  "version": "0.0.1",
+  "description": "Create pattern based AST matcher function",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint index.js spec",
+    "preversion": "npm test",
+    "version": "standard-changelog && git add CHANGELOG.md",
+    "postversion": "git push && git push --tags && npm publish",
+    "pretest": "npm run lint",
+    "test": "tape 'spec/*.spec.js' | tap-dot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huochunpeng/ast-matcher.git"
+  },
+  "keywords": [
+    "ast",
+    "parser",
+    "match",
+    "esprima",
+    "acorn",
+    "espree",
+    "cherow"
+  ],
+  "author": "Chunpeng Huo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/huochunpeng/ast-matcher/issues"
+  },
+  "homepage": "https://github.com/huochunpeng/ast-matcher#readme",
+  "devDependencies": {
+    "acorn": "^5.5.3",
+    "cherow": "^1.3.10",
+    "eslint": "^4.19.1",
+    "espree": "^3.5.4",
+    "esprima": "^4.0.0",
+    "standard-changelog": "^1.0.18",
+    "tap-dot": "^1.0.5",
+    "tape": "^4.9.0"
+  }
+}
