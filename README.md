@@ -1,4 +1,4 @@
-# ast-matcher
+# ast-matcher [![Build Status](https://travis-ci.org/huochunpeng/ast-matcher.svg?branch=master)](https://travis-ci.org/huochunpeng/ast-matcher)
 
 Create pattern based AST matcher function. So you don't need to be an AST master in order to do static code analysis for JavaScript.
 
