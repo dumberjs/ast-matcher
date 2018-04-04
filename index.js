@@ -5,7 +5,9 @@ const SKIP_BRANCH = 1;
 // ignore position info
 const IGNORED_KEYS = ['start', 'end', 'loc', 'location', 'locations', 'line', 'column', 'range', 'ranges'];
 
-let parser;
+let parser = function() {
+  throw new Error('No parser set, you need to set parser before use astMatcher. For instance, astMatcher.setParser(esprima.parse)');
+};
 
 function setParser(p) {
   if (typeof p !== 'function') {

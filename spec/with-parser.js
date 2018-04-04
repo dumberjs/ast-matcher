@@ -10,11 +10,22 @@ const extractTest = function(pattern, part) {
   return extract(compilePattern(pattern), compilePattern(part));
 };
 
+let checkedMissing;
+
 module.exports = function (parserName, parser) {
   function testP(title, cb) {
     test('[' + parserName + '] ' + title, t => {
       astMatcher.setParser(parser);
       cb(t);
+    });
+  }
+
+  if (!checkedMissing) {
+    checkedMissing = true;
+
+    test('missing parser throws error', t => {
+      t.throws(() => astMatcher('a()'));
+      t.end();
     });
   }
 
