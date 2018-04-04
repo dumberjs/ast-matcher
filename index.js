@@ -322,7 +322,8 @@ function depFinder() {
         if (result) {
           // result is like {"1": "dep1", "2": ["dep2", "dep3"]}
           // we only want values
-          Object.values(result).forEach(function (d) {
+          Object.keys(result).forEach(function (k) {
+            let d = result[k];
             if (typeof d === 'string') deps.push(d);
             else deps.push.apply(deps, d);
           });
