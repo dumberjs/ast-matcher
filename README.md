@@ -34,6 +34,13 @@ astMatcher.setParser(function(contents) {
 });
 ```
 
+For TypeScript user, use:
+
+```js
+import * as astMatcher from 'ast-matcher';`
+let { depFinder } = astMatcher;
+```
+
 ## API doc for two main functions: `astMatcher` and `depFinder`.
 
 ### `astMatcher`
