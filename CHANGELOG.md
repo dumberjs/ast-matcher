@@ -1,3 +1,13 @@
+<a name="0.1.5"></a>
+## [0.1.5](https://github.com/huochunpeng/ast-matcher/compare/v0.1.4...v0.1.5) (2018-04-07)
+
+
+### Features
+
+* export traverse function. ([dd56084](https://github.com/huochunpeng/ast-matcher/commit/dd56084))
+
+
+
 <a name="0.1.4"></a>
 ## [0.1.4](https://github.com/huochunpeng/ast-matcher/compare/v0.1.3...v0.1.4) (2018-04-07)
 
