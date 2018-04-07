@@ -1,3 +1,13 @@
+<a name="0.1.4"></a>
+## [0.1.4](https://github.com/huochunpeng/ast-matcher/compare/v0.1.3...v0.1.4) (2018-04-07)
+
+
+### Features
+
+* export ensureParsed function. ([4bcd3fd](https://github.com/huochunpeng/ast-matcher/commit/4bcd3fd))
+
+
+
 <a name="0.1.3"></a>
 ## [0.1.3](https://github.com/huochunpeng/ast-matcher/compare/v0.1.2...v0.1.3) (2018-04-05)
 
