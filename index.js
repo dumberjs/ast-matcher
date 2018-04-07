@@ -340,6 +340,7 @@ function depFinder() {
 
 module.exports = astMatcher;
 module.exports.setParser = setParser;
+module.exports.ensureParsed = ensureParsed;
 module.exports.extract = extract;
 module.exports.compilePattern = compilePattern;
 module.exports.depFinder = depFinder;
