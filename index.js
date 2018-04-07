@@ -344,3 +344,6 @@ module.exports.ensureParsed = ensureParsed;
 module.exports.extract = extract;
 module.exports.compilePattern = compilePattern;
 module.exports.depFinder = depFinder;
+module.exports.STOP = STOP;
+module.exports.SKIP_BRANCH = SKIP_BRANCH;
+module.exports.traverse = traverse;
