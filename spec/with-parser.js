@@ -198,6 +198,11 @@ module.exports = function (parserName, parser) {
     t.end();
   });
 
+  testP('extact matches string literal without testing raw', t => {
+    t.deepEqual(extractTest('a("foo")', "a('foo')"), {});
+    t.end();
+  });
+
   testP('astMatcher builds matcher', t => {
     t.equal(typeof astMatcher('a(__str_a)'), 'function');
     t.end();
