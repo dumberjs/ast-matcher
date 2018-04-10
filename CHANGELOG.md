@@ -1,3 +1,13 @@
+<a name="0.1.6"></a>
+## [0.1.6](https://github.com/huochunpeng/ast-matcher/compare/v0.1.5...v0.1.6) (2018-04-10)
+
+
+### Bug Fixes
+
+* ignore raw, in order to match "foo" with 'foo'. ([64d4b38](https://github.com/huochunpeng/ast-matcher/commit/64d4b38))
+
+
+
 <a name="0.1.5"></a>
 ## [0.1.5](https://github.com/huochunpeng/ast-matcher/compare/v0.1.4...v0.1.5) (2018-04-07)
 
