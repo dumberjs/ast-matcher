@@ -10,7 +10,9 @@
     "version": "standard-changelog && git add CHANGELOG.md",
     "postversion": "git push && git push --tags && npm publish",
     "pretest": "npm run lint",
-    "test": "tape 'spec/*.spec.js' | tap-dot"
+    "browser-test": "browserify spec/acorn.spec.js spec/cherow.spec.js spec/espree.spec.js spec/esprima.spec.js spec/index-exports.spec.js | tape-run | tap-dot",
+    "nodejs-test": "tape 'spec/*.spec.js' | tap-dot",
+    "test": "npm run nodejs-test && npm run browser-test"
   },
   "repository": {
     "type": "git",
@@ -33,12 +35,14 @@
   "homepage": "https://github.com/huochunpeng/ast-matcher#readme",
   "devDependencies": {
     "acorn": "^6.0.2",
+    "browserify": "^16.2.3",
     "cherow": "^1.6.8",
     "eslint": "^5.6.1",
     "espree": "^4.0.0",
     "esprima": "^4.0.1",
     "standard-changelog": "^2.0.1",
     "tap-dot": "^2.0.0",
-    "tape": "^4.9.1"
+    "tape": "^4.9.1",
+    "tape-run": "^4.0.0"
   }
 }
