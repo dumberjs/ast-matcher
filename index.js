@@ -263,9 +263,8 @@ function astMatcher(pattern) {
       let m = extract(pat, n);
       if (m) {
         matches.push({
-          match: m, // explain...
+          match: m,
           node: n   // this is the full matching node
-                    // explain purpose
         });
         // found a match, don't go deeper on this tree branch
         // return SKIP_BRANCH;
