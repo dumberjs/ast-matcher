@@ -1,3 +1,8 @@
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/huochunpeng/ast-matcher/compare/v0.1.6...v1.0.0) (2018-10-03)
+
+
+
 <a name="0.1.6"></a>
 ## [0.1.6](https://github.com/huochunpeng/ast-matcher/compare/v0.1.5...v0.1.6) (2018-04-10)
 
