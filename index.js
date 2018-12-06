@@ -67,7 +67,7 @@ function matchTerm(pattern) {
     type = ARR;
   }
 
-  if (type) return {type: type, name: possible.substring(6)};
+  if (type) return {type: type, name: possible.slice(6)};
 }
 
 /**
