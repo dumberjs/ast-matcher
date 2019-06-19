@@ -14,7 +14,7 @@
     "version": "standard-changelog && git add CHANGELOG.md",
     "postversion": "git push && git push --tags && npm publish",
     "pretest": "npm run lint",
-    "browser-test": "browserify spec/acorn.spec.js spec/cherow.spec.js spec/espree.spec.js spec/esprima.spec.js spec/index-exports.spec.js | tape-run | tap-dot",
+    "browser-test": "browserify spec/acorn.spec.js spec/cherow.spec.js spec/espree.spec.js spec/esprima.spec.js spec/index-exports.spec.js | browser-do --tap | tap-dot",
     "nodejs-test": "tape \"spec/*.spec.js\" | tap-dot",
     "test": "npm run nodejs-test && npm run browser-test"
   },
@@ -47,6 +47,6 @@
     "standard-changelog": "^2.0.11",
     "tap-dot": "^2.0.0",
     "tape": "^4.10.2",
-    "tape-run": "^6.0.0"
+    "browser-do": "^0.2.0"
   }
 }
