@@ -41,12 +41,12 @@
     "acorn": "^6.1.1",
     "browserify": "^16.2.3",
     "cherow": "^1.6.9",
-    "eslint": "^5.16.0",
-    "espree": "^5.0.1",
+    "eslint": "^6.0.1",
+    "espree": "^6.0.0",
     "esprima": "^4.0.1",
     "standard-changelog": "^2.0.11",
     "tap-dot": "^2.0.0",
-    "tape": "^4.10.2",
-    "browser-do": "^0.2.0"
+    "tape": "^4.11.0",
+    "browser-do": "^0.3.2"
   }
 }
