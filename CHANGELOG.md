@@ -1,3 +1,12 @@
+## [1.0.3](https://github.com/dumberjs/ast-matcher/compare/v1.0.2...v1.0.3) (2019-07-04)
+
+
+### Bug Fixes
+
+* support matching class body with __anl ([d1d215c](https://github.com/dumberjs/ast-matcher/commit/d1d215c))
+
+
+
 ## [1.0.2](https://github.com/dumberjs/ast-matcher/compare/v1.0.1...v1.0.2) (2018-12-05)
 
 
