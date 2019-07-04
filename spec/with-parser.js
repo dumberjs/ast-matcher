@@ -269,6 +269,40 @@ module.exports = function (parserName, parser) {
     t.end();
   });
 
+  if (parserName === 'cherow') {
+    testP('matcher built by astMatcher supports class body with __anl', t => {
+      let m = astMatcher('export class __any_name { __anl_body }');
+      let r = m(`
+export class Foo {
+  name = 'ok';
+  bar() {}
+  get loo() {}
+}
+`);
+      t.equal(r.length, 1);
+      t.equal(r[0].match.name.name, 'Foo');
+      t.equal(r[0].match.body.length, 3);
+      t.equal(r[0].match.body[0].key.name, 'name');
+      t.equal(r[0].match.body[1].key.name, 'bar');
+      t.equal(r[0].match.body[2].key.name, 'loo');
+      t.end();
+    });
+
+    testP('matcher built by astMatcher supports class body with __anl case 2', t => {
+      let m = astMatcher('class __any_name { __anl }');
+      let r = m(`
+class Foo {
+  name = 'ok';
+  bar() {}
+  get loo() {}
+}
+`);
+      t.equal(r.length, 1);
+      t.equal(r[0].match.name.name, 'Foo');
+      t.end();
+    });
+  }
+
   testP('matcher built by astMatcher continues to match even after match found', t => {
     let m = astMatcher('__any.__any_m()');
     let r = m('a.m1().m2()');

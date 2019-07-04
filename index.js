@@ -52,6 +52,9 @@ function matchTerm(pattern) {
   } else if (pattern.type === 'ExpressionStatement' &&
              pattern.expression.type === 'Identifier') {
     possible = pattern.expression.name.toString();
+  } else if ((pattern.type === 'FieldDefinition' || pattern.type === 'ClassProperty') &&
+             pattern.key.type === 'Identifier') {
+    possible = pattern.key.name.toString();
   }
 
   if (!possible || !possible.startsWith('__')) return;
