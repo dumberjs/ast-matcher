@@ -1,3 +1,12 @@
+## [1.0.4](https://github.com/dumberjs/ast-matcher/compare/v1.0.3...v1.0.4) (2019-07-13)
+
+
+### Features
+
+* improve TypeScript typing ([1da1d3b](https://github.com/dumberjs/ast-matcher/commit/1da1d3b))
+
+
+
 ## [1.0.3](https://github.com/dumberjs/ast-matcher/compare/v1.0.2...v1.0.3) (2019-07-04)
 
 
