@@ -14,7 +14,7 @@
     "version": "standard-changelog && git add CHANGELOG.md",
     "postversion": "git push && git push --tags && npm publish",
     "pretest": "npm run lint",
-    "browser-test": "browserify spec/acorn.spec.js spec/cherow.spec.js spec/espree.spec.js spec/esprima.spec.js spec/index-exports.spec.js | browser-do --tap | tap-dot",
+    "browser-test": "browserify spec/acorn.spec.js spec/cherow.spec.js spec/espree.spec.js spec/esprima.spec.js spec/babel-parser.spec.js spec/index-exports.spec.js | browser-do --tap | tap-dot",
     "nodejs-test": "tape \"spec/*.spec.js\" | tap-dot",
     "test": "npm run nodejs-test && npm run browser-test"
   },
@@ -38,15 +38,16 @@
   },
   "homepage": "https://github.com/dumberjs/ast-matcher#readme",
   "devDependencies": {
-    "acorn": "^6.1.1",
-    "browserify": "^16.2.3",
+    "@babel/parser": "^7.5.5",
+    "acorn": "^7.0.0",
+    "browser-do": "^0.3.2",
+    "browserify": "^16.5.0",
     "cherow": "^1.6.9",
-    "eslint": "^6.0.1",
-    "espree": "^6.0.0",
+    "eslint": "^6.2.2",
+    "espree": "^6.1.1",
     "esprima": "^4.0.1",
-    "standard-changelog": "^2.0.11",
+    "standard-changelog": "^2.0.13",
     "tap-dot": "^2.0.0",
-    "tape": "^4.11.0",
-    "browser-do": "^0.3.2"
+    "tape": "^4.11.0"
   }
 }
