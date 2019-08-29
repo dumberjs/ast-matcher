@@ -1,6 +1,6 @@
 {
   "name": "ast-matcher",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Create pattern based AST matcher function",
   "main": "index.js",
   "types": "index.d.ts",

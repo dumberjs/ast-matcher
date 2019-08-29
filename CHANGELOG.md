@@ -1,3 +1,12 @@
+## [1.0.5](https://github.com/dumberjs/ast-matcher/compare/v1.0.4...v1.0.5) (2019-08-29)
+
+
+### Bug Fixes
+
+* fix compatibility issue with @babel/parser ([1de4b92](https://github.com/dumberjs/ast-matcher/commit/1de4b92))
+
+
+
 ## [1.0.4](https://github.com/dumberjs/ast-matcher/compare/v1.0.3...v1.0.4) (2019-07-13)
 
 
