@@ -195,6 +195,14 @@ module.exports = function (parserName, parser) {
       '(__any, __any.noView)([__arr_deps], __str_baseUrl)',
       '(1, _aureliaFramework.noView)(["./foo", "./bar"], "lorem")'
     ), {deps: ['./foo', './bar'], baseUrl: 'lorem'});
+    t.deepEqual(extractTest(
+      '(__any, __any.noView)([__arr_deps])',
+      '(1, _aureliaFramework.noView)(["./foo", "./bar"])'
+    ), {deps: ['./foo', './bar']});
+    t.deepEqual(extractTest(
+      '(__any, __any.useView)(__arr_dep)',
+      '(1, _aureliaFramework.useView)("./foo.html")'
+    ), {dep: ['./foo.html']});
     t.end();
   });
 
@@ -266,6 +274,21 @@ module.exports = function (parserName, parser) {
 
     r = m('if (c && d) { a(); b(); }');
     t.equal(r.length, 1);
+    t.end();
+  });
+
+  testP('matcher built by astMatcher complex pattern', t => {
+    const m = astMatcher('(__any, __any.noView)([__arr_deps])');
+    const r = m('(dec = (1, _aureliaFramework.noView)(["./foo", "./bar"]), dec())');
+    t.ok(r);
+    t.equal(r.length, 1);
+    t.deepEqual(r[0].match.deps, ["./foo", "./bar"]);
+
+    const m2 = astMatcher('(__any, __any.useView)(__arr_dep)');
+    const r2 = m2('(dec = (1, _aureliaFramework.useView)("./foo.html"), dec())');
+    t.ok(r2);
+    t.equal(r2.length, 1);
+    t.deepEqual(r2[0].match.dep, ['./foo.html']);
     t.end();
   });
 
