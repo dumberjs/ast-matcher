@@ -14,7 +14,14 @@ function setParser(p) {
     throw new Error("Input parser must be a function that takes JavaScript contents as input, produce a estree compliant syntax tree object.")
   }
 
-  _parser = p;
+  _parser = function(contents) {
+    let node = p(contents);
+    // To be friendly to @babel/parser
+    if (node.type === 'File' && node.program) {
+      node = node.program;
+    }
+    return node;
+  };
 }
 
 // From an esprima example for traversing its ast.
@@ -194,10 +201,6 @@ function extract(pattern, part) {
 function compilePattern(pattern) {
   let exp = ensureParsed(pattern);
 
-  if (exp.type === 'File' && exp.program) {
-    exp = exp.program;
-  }
-
   if (exp.type !== 'Program' || !exp.body) {
     throw new Error(`Not a valid expression:  "${pattern}".`);
   }
@@ -218,7 +221,13 @@ function compilePattern(pattern) {
 
 function ensureParsed(codeOrNode) {
   // bypass parsed node
-  if (codeOrNode && codeOrNode.type) return codeOrNode;
+  if (codeOrNode && codeOrNode.type) {
+    // To be friendly to @babel/parser
+    if (codeOrNode.type === 'File' && codeOrNode.program) {
+      return codeOrNode.program;
+    }
+    return codeOrNode;
+  }
   return _parser(codeOrNode);
 }
 
