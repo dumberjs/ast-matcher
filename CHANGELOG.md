@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/dumberjs/ast-matcher/compare/v1.0.5...v1.1.0) (2019-08-30)
+
+
+### Features
+
+* be more friendly to babel parser ([ce82918](https://github.com/dumberjs/ast-matcher/commit/ce82918))
+
+
+
 ## [1.0.5](https://github.com/dumberjs/ast-matcher/compare/v1.0.4...v1.0.5) (2019-08-29)
 
 
