@@ -5,7 +5,7 @@ const SKIP_BRANCH = 1;
 // ignore position info, and raw
 const IGNORED_KEYS = ['start', 'end', 'loc', 'location', 'locations', 'line', 'column', 'range', 'ranges', 'raw', 'extra'];
 
-let parser = function() {
+let _parser = function() {
   throw new Error('No parser set, you need to set parser before use astMatcher. For instance, astMatcher.setParser(esprima.parse)');
 };
 
@@ -14,7 +14,7 @@ function setParser(p) {
     throw new Error("Input parser must be a function that takes JavaScript contents as input, produce a estree compliant syntax tree object.")
   }
 
-  parser = p;
+  _parser = p;
 }
 
 // From an esprima example for traversing its ast.
@@ -192,14 +192,11 @@ function extract(pattern, part) {
  * @return Returns an estree node to be used as pattern in extract(pattern, part)
  */
 function compilePattern(pattern) {
-  // pass estree syntax tree obj
-  if (pattern && pattern.type) return pattern;
+  let exp = ensureParsed(pattern);
 
-  if (typeof pattern !== 'string') {
-    throw new Error('input pattern is neither a string nor an estree node.');
+  if (exp.type === 'File' && exp.program) {
+    exp = exp.program;
   }
-
-  let exp = parser(pattern);
 
   if (exp.type !== 'Program' || !exp.body) {
     throw new Error(`Not a valid expression:  "${pattern}".`);
@@ -222,7 +219,7 @@ function compilePattern(pattern) {
 function ensureParsed(codeOrNode) {
   // bypass parsed node
   if (codeOrNode && codeOrNode.type) return codeOrNode;
-  return parser(codeOrNode);
+  return _parser(codeOrNode);
 }
 
 /**

@@ -2,8 +2,8 @@
 const parser = require('@babel/parser');
 const withParser = require('./with-parser');
 
-withParser('@babel/parser', code => {
-  const file = parser.parse(code, {sourceType: 'module', plugins: [
+withParser('@babel/parser', code =>
+  parser.parse(code, {sourceType: 'module', plugins: [
     'jsx',
     'typescript',
     'asyncGenerators',
@@ -30,6 +30,5 @@ withParser('@babel/parser', code => {
     // ['pipelineOperator', {proposal: 'minimal'}],
     'throwExpressions',
     'estree'
-  ]});
-  return file && file.program;
-});
+  ]})
+);

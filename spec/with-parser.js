@@ -29,9 +29,9 @@ module.exports = function (parserName, parser) {
     });
   }
 
-  testP('compilePattern bypass esprima node', t => {
+  testP('compilePattern understands extree node', t => {
     let node = parser('a = 1');
-    t.equal(compilePattern(node), node);
+    t.equal(compilePattern(node).type, 'AssignmentExpression');
     t.end();
   });
 
