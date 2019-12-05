@@ -38,15 +38,15 @@
   },
   "homepage": "https://github.com/dumberjs/ast-matcher#readme",
   "devDependencies": {
-    "@babel/parser": "^7.5.5",
-    "acorn": "^7.0.0",
-    "browser-do": "^0.3.2",
+    "@babel/parser": "^7.7.4",
+    "acorn": "^7.1.0",
+    "browser-do": "^0.3.3",
     "browserify": "^16.5.0",
     "cherow": "^1.6.9",
-    "eslint": "^6.2.2",
-    "espree": "^6.1.1",
+    "eslint": "^6.7.2",
+    "espree": "^6.1.2",
     "esprima": "^4.0.1",
-    "standard-changelog": "^2.0.13",
+    "standard-changelog": "^2.0.18",
     "tap-dot": "^2.0.0",
     "tape": "^4.11.0"
   }
