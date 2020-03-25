@@ -20,6 +20,8 @@ We support any parser compatible with [ESTree spec](https://github.com/estree/es
 - [cherow](https://github.com/cherow/cherow)
 - [espree](https://github.com/eslint/espree)
 - [esprima](https://github.com/jquery/esprima/)
+- [meriyah](https://github.com/meriyah/meriyah)
+- [seafox](https://github.com/KFlash/seafox)
 
 Take `esprima` for example, you need to use `setParser` to hook it up for `ast-matcher`.
 
