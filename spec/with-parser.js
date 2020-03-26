@@ -230,12 +230,6 @@ module.exports = function (parserName, parser) {
     t.end();
   });
 
-  testP('matcher built by astMatcher rejects unknown input', t => {
-    let m = astMatcher('a(__str_foo)');
-    t.throws(() => m(new Buffer()));
-    t.end();
-  });
-
   testP('matcher built by astMatcher returns matches and matching nodes', t => {
     let m = astMatcher('__any.method(__str_foo, [__arr_opts])');
     let r = m('function test(au, jq) { au.method("a", ["b", "c"]); jq.method("d", ["e"]); }');

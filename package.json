@@ -14,8 +14,8 @@
     "version": "standard-changelog && git add CHANGELOG.md",
     "postversion": "git push && git push --tags && npm publish",
     "pretest": "npm run lint",
-    "browser-test": "browserify spec/*.spec.js | browser-do --tap | tap-dot",
-    "nodejs-test": "tape spec/*.spec.js | tap-dot",
+    "browser-test": "browserify spec/all-browser-tests.js | browser-do --tap | tap-dot",
+    "nodejs-test": "tape \"spec/*.spec.js\" | tap-dot",
     "test": "npm run nodejs-test && npm run browser-test"
   },
   "repository": {
