@@ -29,7 +29,8 @@
     "esprima",
     "acorn",
     "espree",
-    "cherow"
+    "meriyah",
+    "seafox"
   ],
   "author": "Chunpeng Huo",
   "license": "MIT",
