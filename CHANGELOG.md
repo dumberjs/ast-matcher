@@ -1,3 +1,12 @@
+# [1.2.0](https://github.com/dumberjs/ast-matcher/compare/v1.1.1...v1.2.0) (2024-05-12)
+
+
+### Features
+
+* add support of oxc-parser ([54d0970](https://github.com/dumberjs/ast-matcher/commit/54d09706f7790a2a10c0cd5d3480551de6a396fb))
+
+
+
 ## [1.1.1](https://github.com/dumberjs/ast-matcher/compare/v1.1.0...v1.1.1) (2019-08-30)
 
 
