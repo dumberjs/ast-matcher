@@ -107,7 +107,7 @@ function extract(pattern, part) {
 
     // if single __str_foo
     } else if (term.type === STR) {
-      if (part.type === 'Literal') {
+      if (part.type === 'Literal' || part.type === 'StringLiteral') {
         if (term.name) {
           // get result {foo: value}
           let r = {};
@@ -133,7 +133,7 @@ function extract(pattern, part) {
         // if single __arr_foo
         if (arrTerm.type === ARR) {
           // find all or partial Literals in an array
-          let arr = part.filter(function(it) { return it.type === 'Literal'; })
+          let arr = part.filter(function(it) { return it.type === 'Literal' || it.type === 'StringLiteral'; })
                         .map(function(it) { return it.value; });
           if (arr.length) {
             if (arrTerm.name) {

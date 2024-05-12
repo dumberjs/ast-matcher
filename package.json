@@ -47,6 +47,7 @@
     "espree": "^10.0.1",
     "esprima": "^4.0.1",
     "meriyah": "^4.4.2",
+    "oxc-parser": "^0.9.0",
     "standard-changelog": "^6.0.0",
     "tape": "^5.7.5"
   }

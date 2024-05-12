@@ -60,8 +60,8 @@ module.exports = function (parserName, parser) {
   testP('extract bare term has limited support', t => {
     t.deepEqual(extractTest('__any', 'a(foo)'), {});
     t.equal(extractTest('__anl', 'foo,bar'), false);
-    t.deepEqual(extractTest('__str', '"foo"'), {});
-    t.deepEqual(extractTest('__str_a', '"foo"'), {a: 'foo'});
+    t.deepEqual(extractTest('(__str)', '("foo")'), {});
+    t.deepEqual(extractTest('(__str_a)', '("foo")'), {a: 'foo'});
     t.end();
   });
 
@@ -80,14 +80,14 @@ module.exports = function (parserName, parser) {
 
     r = extractTest('a(__any_a)', 'a("foo")');
     t.deepEqual(Object.keys(r), ['a']);
-    t.equal(r.a.type, 'Literal');
+    t.ok(['Literal', 'StringLiteral'].includes(r.a.type));
     t.equal(r.a.value, 'foo');
 
     r = extractTest('a(__any_a,__any_b)', 'a("foo", "bar")');
     t.deepEqual(Object.keys(r).sort(), ['a', 'b']);
-    t.equal(r.a.type, 'Literal');
+    t.ok(['Literal', 'StringLiteral'].includes(r.a.type));
     t.equal(r.a.value, 'foo');
-    t.equal(r.b.type, 'Literal');
+    t.ok(['Literal', 'StringLiteral'].includes(r.b.type));
     t.equal(r.b.value, 'bar');
     t.end();
   });
