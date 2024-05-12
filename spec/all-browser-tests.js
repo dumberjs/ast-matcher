@@ -4,4 +4,3 @@ require('./espree.spec.js');
 require('./esprima.spec.js');
 require('./index-exports.spec.js');
 require('./meriyah.spec.js');
-require('./seafox.spec.js');

@@ -17,11 +17,9 @@ We support any parser compatible with [ESTree spec](https://github.com/estree/es
 
 - [acorn](https://github.com/acornjs/acorn)
 - [@babel/parser](https://github.com/babel/babel/tree/master/packages/babel-parser) with `estree` plugin
-- [cherow](https://github.com/cherow/cherow)
 - [espree](https://github.com/eslint/espree)
 - [esprima](https://github.com/jquery/esprima/)
 - [meriyah](https://github.com/meriyah/meriyah)
-- [seafox](https://github.com/KFlash/seafox)
 
 Take `esprima` for example, you need to use `setParser` to hook it up for `ast-matcher`.
 

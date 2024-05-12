@@ -29,8 +29,7 @@
     "esprima",
     "acorn",
     "espree",
-    "meriyah",
-    "seafox"
+    "meriyah"
   ],
   "author": "Chunpeng Huo",
   "license": "MIT",
@@ -48,7 +47,6 @@
     "espree": "^10.0.1",
     "esprima": "^4.0.1",
     "meriyah": "^4.4.2",
-    "seafox": "^1.7.1",
     "standard-changelog": "^6.0.0",
     "tape": "^5.7.5"
   }
